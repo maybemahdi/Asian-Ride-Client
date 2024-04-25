@@ -4,9 +4,11 @@ import Footer from "../Shared/Footer";
 
 const Layout = () => {
   return (
-    <div className="w-[85%] mx-auto font-poppins">
+    <div className="font-poppins">
       <Nav />
-      <Outlet />
+      <div className="w-[85%] mx-auto">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

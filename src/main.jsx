@@ -8,6 +8,8 @@ import ErrorPage from "./Pages/ErrorPage.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import Register from "./Pages/Register.jsx";
 import Login from "./Pages/Login.jsx";
+import AuthProvider from "./AuthProvider/AuthProvider.jsx";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -21,11 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/register",
-        element: <Register/> ,
+        element: <Register />,
       },
       {
         path: "/login",
-        element: <Login /> ,
+        element: <Login />,
       },
     ],
   },
@@ -34,7 +36,10 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HelmetProvider>
-      <RouterProvider router={router}></RouterProvider>
+      <AuthProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </AuthProvider>
     </HelmetProvider>
+    <Toaster/>
   </React.StrictMode>
 );
