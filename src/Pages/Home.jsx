@@ -24,7 +24,7 @@ const Home = () => {
           data-aos="zoom-in"
           className="flex absolute flex-col space-y-6 justify-center my-40 items-center text-white"
         >
-          <h3 className="lg:text-6xl text-4xl text-center font-black text-[#c637dc]">
+          <h3 className="lg:text-6xl text-4xl text-center font-black text-[#9dad68]">
             Welcome to Cox's Bazar
           </h3>
           <h5 className="text-white text-center w-[80%] font-semibold text-2xl">
@@ -35,7 +35,7 @@ const Home = () => {
             seamless view experience and comprehensive staying, finding your
             holiday has been easier.
           </p>
-          <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-[#9b4ac7dd] relative hover:bg-gradient-to-r hover:from-[#7e2cabdd] hover:bg-black text-white hover:ring-2 hover:ring-offset-2 transition-all ease-out duration-300">
+          <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-[#9dad68] relative hover:bg-gradient-to-r hover:from-[#81924c] hover:bg-black text-white hover:ring-2 hover:ring-offset-2 transition-all ease-out duration-300">
             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
             <span className="flex gap-1 items-center">Learn More <BiArrowFromLeft/></span>
           </button>
@@ -59,7 +59,7 @@ const Home = () => {
           data-aos="zoom-in"
           className="flex absolute flex-col space-y-6 justify-center my-40 items-center text-white"
         >
-          <h3 className="lg:text-6xl text-4xl text-center font-black text-[#a017d2]">
+          <h3 className="lg:text-6xl text-4xl text-center font-black text-[#9dad68]">
             Welcome to Rangamati
           </h3>
           <h5 className="text-white text-center w-[80%] font-semibold text-2xl">
@@ -70,7 +70,7 @@ const Home = () => {
             seamless view experience and comprehensive staying, finding your
             holiday has been easier.
           </p>
-          <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-[#9b4ac7dd] relative hover:bg-gradient-to-r hover:from-[#7e2cabdd] hover:bg-black text-white hover:ring-2 hover:ring-offset-2 transition-all ease-out duration-300">
+          <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-[#9dad68] relative hover:bg-gradient-to-r hover:from-[#8b9c54] hover:bg-black text-white hover:ring-2 hover:ring-offset-2 transition-all ease-out duration-300">
             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
             <span className="flex gap-1 items-center">Learn More <BiArrowFromLeft/></span>
           </button>
@@ -94,7 +94,7 @@ const Home = () => {
           data-aos="zoom-in"
           className="flex absolute flex-col space-y-6 justify-center my-40 items-center text-white"
         >
-          <h3 className="lg:text-6xl text-4xl text-center font-black text-[#a017d2]">
+          <h3 className="lg:text-6xl text-4xl text-center font-black text-[#9dad68]">
             Welcome to Sundarban
           </h3>
           <h5 className="text-white text-center w-[80%] font-semibold text-2xl">
@@ -105,7 +105,7 @@ const Home = () => {
             seamless view experience and comprehensive staying, finding your
             holiday has been easier.
           </p>
-          <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-[#9b4ac7dd] relative hover:bg-gradient-to-r hover:from-[#7e2cabdd] hover:bg-black text-white hover:ring-2 hover:ring-offset-2 transition-all ease-out duration-300">
+          <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-[#9dad68] relative hover:bg-gradient-to-r hover:from-[#8fa058] hover:bg-black text-white hover:ring-2 hover:ring-offset-2 transition-all ease-out duration-300">
             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
             <span className="flex gap-1 items-center">Learn More <BiArrowFromLeft/></span>
           </button>
@@ -129,7 +129,7 @@ const Home = () => {
           data-aos="zoom-in"
           className="flex absolute flex-col space-y-6 justify-center my-40 items-center text-white"
         >
-          <h3 className="lg:text-6xl text-4xl text-center font-black text-[#cb3deb]">
+          <h3 className="lg:text-6xl text-4xl text-center font-black text-[#9dad68]">
             Welcome to Saint Martin Island
           </h3>
           <h5 className="text-white text-center w-[80%] font-semibold text-2xl">
@@ -140,7 +140,7 @@ const Home = () => {
             seamless view experience and comprehensive staying, finding your
             holiday has been easier.
           </p>
-          <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-[#9b4ac7dd] relative hover:bg-gradient-to-r hover:from-[#7e2cabdd] hover:bg-black text-white hover:ring-2 hover:ring-offset-2 transition-all ease-out duration-300">
+          <button className="rounded px-5 font-semibold cursor-pointer py-3 overflow-hidden group bg-[#9dad68] relative hover:bg-gradient-to-r hover:from-[#90a05b] hover:bg-black text-white hover:ring-2 hover:ring-offset-2 transition-all ease-out duration-300">
             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
             <span className="flex gap-1 items-center">Learn More <BiArrowFromLeft/></span>
           </button>
