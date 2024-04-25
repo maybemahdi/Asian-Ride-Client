@@ -26,7 +26,7 @@ const Nav = () => {
             isPending
               ? "pending"
               : isActive
-              ? "rounded-none border border-black focus:bg-[#8d914a] bg-[#8d914a] focus:text-[#000000] text-[#000000]"
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
               : "text-black no-underline"
           }
           to="/"
@@ -40,7 +40,7 @@ const Nav = () => {
             isPending
               ? "pending"
               : isActive
-              ? "rounded-none border border-black focus:bg-[#8d914a] bg-[#8d914a] focus:text-[#000000] text-[#000000]"
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
               : "text-black no-underline"
           }
           to={"/all-tourist-spot"}
@@ -54,7 +54,7 @@ const Nav = () => {
             isPending
               ? "pending"
               : isActive
-              ? "rounded-none border border-black focus:bg-[#8d914a] bg-[#8d914a] focus:text-[#000000] text-[#000000]"
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
               : "text-black no-underline"
           }
           to={"/add-tourist-spot"}
@@ -68,7 +68,7 @@ const Nav = () => {
             isPending
               ? "pending"
               : isActive
-              ? "rounded-none border border-black focus:bg-[#8d914a] bg-[#8d914a] focus:text-[#000000] text-[#000000]"
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
               : "text-black no-underline"
           }
           to={"/my-list"}
@@ -115,7 +115,7 @@ const Nav = () => {
             {navLinks}
           </ul>
         </div>
-        <div className="navbar-end relative gap-4">
+        <div className="navbar-end relative md:gap-4">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input
@@ -165,16 +165,16 @@ const Nav = () => {
             )}
           </div>
           {!user && (
-            <div className="flex gap-4">
+            <div className="md:flex hidden gap-4">
               <Link
                 to={"/login"}
-                className="bg-[#B99470] rounded no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-white hover:bg-[#8b9568]"
+                className="bg-[#b9947000] font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#8b9568]"
               >
                 Login
               </Link>
               <Link
                 to={"/register"}
-                className="bg-[#B99470] rounded no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-white hover:bg-[#8b9568]"
+                className="bg-[#b9947000] font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#8b9568]"
               >
                 Register
               </Link>

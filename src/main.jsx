@@ -10,6 +10,7 @@ import Register from "./Pages/Register.jsx";
 import Login from "./Pages/Login.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
+import AddTouristSpot from "./Pages/AddTouristSpot.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/add-tourist-spot",
+        element: <AddTouristSpot/> ,
       },
     ],
   },
