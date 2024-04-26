@@ -224,6 +224,17 @@ const Home = () => {
           </div>
         ))}
       </div>
+      {/* countries section  */}
+      <div className="flex flex-col my-12 items-center">
+        <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
+          Countries: We offer to visit
+        </h3>
+        <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
+          Explore historic wonders like the Himalaya in Nepal,
+          delve into the vibrant street markets of Dhaka, or
+          indulge in the spicy culinary delights of Sri Lanka.
+        </p>
+      </div>
       {/* testimonial section */}
       <div className="my-10">
         <div className="flex flex-col my-10 items-center">
