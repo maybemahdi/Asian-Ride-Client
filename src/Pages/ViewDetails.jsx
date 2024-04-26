@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
@@ -6,6 +7,9 @@ const ViewDetails = () => {
   const [spot, setSpot] = useState(loadedSpot);
   return (
     <div data-aos="zoom-in" className="p-5 rounded-md">
+      <Helmet>
+        <title>Asian Ride | View Details</title>
+      </Helmet>
       <div className="flex flex-col mb-12 items-center">
         <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
           View Spot: Just a look of{" "}

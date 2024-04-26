@@ -8,7 +8,7 @@ const ErrorPage = () => {
         <title>Asian Ride | Error</title>
       </Helmet>
       <Link to={"/"} className="no-underline">
-        <button className="bg-[#a93fda] text-white font-semibold cursor-pointer py-3 px-4 rounded-md w-fit mx-auto flex items-center justify-center hover:bg-black">
+        <button className="bg-[#B99470] text-white font-semibold cursor-pointer py-3 px-4 rounded-md w-fit mx-auto flex items-center justify-center hover:bg-black">
           Go Home
         </button>
       </Link>

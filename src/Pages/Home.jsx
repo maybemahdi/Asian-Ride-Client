@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { BiArrowFromLeft } from "react-icons/bi";
 import { Link, useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 AOS.init({
   duration: 1200,
 });
@@ -17,6 +18,9 @@ const Home = () => {
   }
   return (
     <div>
+      <Helmet>
+        <title>Asian Ride | Home</title>
+      </Helmet>
       {/* banner slider  */}
       <div data-aos="zoom-in" className="carousel w-full my-12">
         <div id="slide1" className="carousel-item relative w-full">

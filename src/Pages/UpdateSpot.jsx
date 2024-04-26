@@ -2,6 +2,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseRefetch from "../Refetch/UseRefetch";
+import { Helmet } from "react-helmet-async";
 
 const UpdateSpot = () => {
   const loadedSpot = useLoaderData();
@@ -57,6 +58,9 @@ const UpdateSpot = () => {
 //   }
   return (
     <div className="mt-5">
+      <Helmet>
+        <title>Asian Ride | Update Spot</title>
+      </Helmet>
       <div className="flex flex-col mb-10 items-center">
         <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
           Update Your Spot Here

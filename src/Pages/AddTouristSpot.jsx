@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import UseRefetch from "../Refetch/UseRefetch";
 import Loader from "../Components/Loader";
+import { Helmet } from "react-helmet-async";
 
 const AddTouristSpot = () => {
   const { isLoading, refetch } = UseRefetch();
@@ -58,6 +59,9 @@ const AddTouristSpot = () => {
   }
   return (
     <div className="mt-5">
+      <Helmet>
+        <title>Asian Ride | Add Tourist Spot</title>
+      </Helmet>
       <div className="flex flex-col mb-10 items-center">
         <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
           Add Spot Here

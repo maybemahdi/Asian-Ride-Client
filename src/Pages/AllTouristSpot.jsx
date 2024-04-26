@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link, useLoaderData } from "react-router-dom";
 
@@ -12,6 +13,9 @@ const AllTouristSpot = () => {
   };
   return (
     <div className="my-12">
+      <Helmet>
+        <title>Asian Ride | All Tourist Spot</title>
+      </Helmet>
       <div className="flex flex-col mb-8 items-center">
         <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
           Spots: Just a look of our Spots
