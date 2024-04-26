@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseRefetch from "../Refetch/UseRefetch";
@@ -19,8 +19,8 @@ const UpdateSpot = () => {
     const season = form.season.value;
     const time = form.time.value;
     const visitors = form.visitors.value;
-    const email = form.email.value;
-    const name = form.userName.value;
+    // const email = form.email.value;
+    // const name = form.userName.value;
     const spot = {
       spotName,
       photo,
@@ -31,8 +31,6 @@ const UpdateSpot = () => {
       season,
       time,
       visitors,
-      email,
-      name,
     };
     fetch(`http://localhost:5000/allspot/${id}`, {
       method: "PUT",
@@ -161,21 +159,7 @@ const UpdateSpot = () => {
                 defaultValue={loadedSpot.season}
                 required
               />
-              <label
-                className="block mt-4 mb-2 dark:text-white"
-                htmlFor="price"
-              >
-                Visitors (per year)
-              </label>
-              <input
-                className="w-full p-2 border rounded-md"
-                type="number"
-                placeholder="Total Visitors by Year"
-                id="visitors"
-                name="visitors"
-                defaultValue={loadedSpot.visitors}
-                required
-              />
+              
             </div>
             {/* Right side */}
             <div className="flex-1">
@@ -234,7 +218,7 @@ const UpdateSpot = () => {
                 defaultValue={loadedSpot.time}
                 required
               />
-              <label
+              {/* <label
                 className="block mt-4 mb-2 dark:text-white"
                 htmlFor="rating"
               >
@@ -248,10 +232,10 @@ const UpdateSpot = () => {
                 name="email"
                 defaultValue={loadedSpot.email}
                 required
-              />
+              /> */}
             </div>
           </div>
-          <label className="block mt-4 mb-2 dark:text-white" htmlFor="price">
+          {/* <label className="block mt-4 mb-2 dark:text-white" htmlFor="price">
             User Name
           </label>
           <input
@@ -262,7 +246,22 @@ const UpdateSpot = () => {
             name="userName"
             defaultValue={loadedSpot.name}
             required
-          />
+          /> */}
+          <label
+                className="block mt-4 mb-2 dark:text-white"
+                htmlFor="price"
+              >
+                Visitors (per year)
+              </label>
+              <input
+                className="w-full p-2 border rounded-md"
+                type="number"
+                placeholder="Total Visitors by Year"
+                id="visitors"
+                name="visitors"
+                defaultValue={loadedSpot.visitors}
+                required
+              />
           <input
             className="px-4 w-full py-2 mt-4 rounded hover:bg-[#8e9c5f]  bg-[#B5C18E] duration-200 text-white cursor-pointer font-semibold"
             type="submit"
