@@ -1,10 +1,13 @@
+import { useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseRefetch from "../Refetch/UseRefetch";
-import Loader from "../Components/Loader";
 
-const AddTouristSpot = () => {
-  const { isLoading, refetch } = UseRefetch();
-  const handleAddSpot = (e) => {
+const UpdateSpot = () => {
+  const loadedSpot = useLoaderData();
+  const { refetch } = UseRefetch();
+  const { id } = useParams();
+  const handleUpdateSpot = (e) => {
     e.preventDefault();
     const form = e.target;
     const spotName = form.spotName.value;
@@ -31,9 +34,8 @@ const AddTouristSpot = () => {
       email,
       name,
     };
-    console.log(spot);
-    fetch("http://localhost:5000/allspot", {
-      method: "POST",
+    fetch(`http://localhost:5000/allspot/${id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -42,29 +44,29 @@ const AddTouristSpot = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
-          form.reset();
-          refetch();
+        if (data.modifiedCount) {
+          refetch()
           Swal.fire({
             title: "Good job!",
-            text: "You just added a Spot!",
+            text: "You just updated this tourist Spot!",
             icon: "success",
           });
         }
       });
   };
-  if (isLoading) {
-    return <Loader />;
-  }
+//   if (isLoading) {
+//     return <Loader />;
+//   }
   return (
     <div className="mt-5">
       <div className="flex flex-col mb-10 items-center">
         <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
-          Add Spot Here
+          Update Your Spot Here
         </h3>
         <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
-          You Can add Asian tourist spot from here and can access the added spot
-          by you from my list option, make sure that you are logged in to view.
+          You Can Update selected tourist spot from here and can access the
+          added spot by you from my list option, make sure that you are logged
+          in to view.
         </p>
       </div>
       <div
@@ -78,7 +80,7 @@ const AddTouristSpot = () => {
           </h2>
         </div>
         {/* form */}
-        <form onSubmit={handleAddSpot}>
+        <form onSubmit={handleUpdateSpot}>
           <div className="flex gap-8 ">
             <div className="flex-1">
               <label className="block mb-2 dark:text-white" htmlFor="name">
@@ -90,6 +92,7 @@ const AddTouristSpot = () => {
                 placeholder="Spot Name"
                 id="spotName"
                 name="spotName"
+                defaultValue={loadedSpot.spotName}
                 required
               />
 
@@ -105,6 +108,7 @@ const AddTouristSpot = () => {
                 className="w-full p-2 border rounded-md"
                 type="text"
                 placeholder="Country Name"
+                defaultValue={loadedSpot.country}
                 required
               >
                 <option value="Bangladesh" selected>
@@ -139,6 +143,7 @@ const AddTouristSpot = () => {
                 placeholder="Short Description"
                 id="des"
                 name="description"
+                defaultValue={loadedSpot.description}
                 required
               />
               <label
@@ -153,6 +158,7 @@ const AddTouristSpot = () => {
                 placeholder="Enter Season"
                 id="season"
                 name="season"
+                defaultValue={loadedSpot.season}
                 required
               />
               <label
@@ -167,6 +173,7 @@ const AddTouristSpot = () => {
                 placeholder="Total Visitors by Year"
                 id="visitors"
                 name="visitors"
+                defaultValue={loadedSpot.visitors}
                 required
               />
             </div>
@@ -181,6 +188,7 @@ const AddTouristSpot = () => {
                 placeholder="Enter Image URL"
                 id="image"
                 name="image"
+                defaultValue={loadedSpot.photo}
                 required
               />
               <label className="block mb-2 mt-4 dark:text-white" htmlFor="type">
@@ -192,6 +200,7 @@ const AddTouristSpot = () => {
                 placeholder="Enter Location"
                 id="location"
                 name="location"
+                defaultValue={loadedSpot.location}
                 required
               />
 
@@ -207,6 +216,7 @@ const AddTouristSpot = () => {
                 placeholder="Enter Cost"
                 id="cost"
                 name="cost"
+                defaultValue={loadedSpot.cost}
                 required
               />
               <label
@@ -221,6 +231,7 @@ const AddTouristSpot = () => {
                 placeholder="Enter Travel Time"
                 id="time"
                 name="time"
+                defaultValue={loadedSpot.time}
                 required
               />
               <label
@@ -235,6 +246,7 @@ const AddTouristSpot = () => {
                 placeholder="Enter User Email"
                 id="email"
                 name="email"
+                defaultValue={loadedSpot.email}
                 required
               />
             </div>
@@ -248,11 +260,13 @@ const AddTouristSpot = () => {
             placeholder="User Name"
             id="userName"
             name="userName"
+            defaultValue={loadedSpot.name}
+            required
           />
           <input
             className="px-4 w-full py-2 mt-4 rounded hover:bg-[#8e9c5f]  bg-[#B5C18E] duration-200 text-white cursor-pointer font-semibold"
             type="submit"
-            value="Add Tourist Spot"
+            value="Update Tourist Spot"
           />
         </form>
       </div>
@@ -260,4 +274,4 @@ const AddTouristSpot = () => {
   );
 };
 
-export default AddTouristSpot;
+export default UpdateSpot;

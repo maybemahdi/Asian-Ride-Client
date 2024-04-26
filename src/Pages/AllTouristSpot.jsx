@@ -7,7 +7,7 @@ const AllTouristSpot = () => {
   const [filter, setFilter] = useState(loadedSpots);
   const handleFilter = (filterText) => {
     if (filterText === "cost") {
-      setFilter((spot) => [...filter].sort((a, b) => b.cost - a.cost));
+      setFilter(() => [...filter].sort((a, b) => b.cost - a.cost));
     }
   };
   return (

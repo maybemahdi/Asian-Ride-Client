@@ -15,6 +15,7 @@ import ViewDetails from "./Pages/ViewDetails.jsx";
 import AllTouristSpot from "./Pages/AllTouristSpot.jsx";
 import MyList from "./Pages/MyList.jsx";
 import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
+import UpdateSpot from "./Pages/UpdateSpot.jsx";
 
 const router = createBrowserRouter([
   {
@@ -60,8 +61,22 @@ const router = createBrowserRouter([
       },
       {
         path: "my-list",
-        element: <MyList/>
-      }
+        element: (
+          <PrivateRoute>
+            <MyList />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-spot/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateSpot />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allspot/${params.id}`),
+      },
     ],
   },
 ]);

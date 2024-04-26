@@ -80,7 +80,7 @@ const Nav = () => {
   );
   return (
     <div className="bg-[#B5C18E] py-5">
-      <div className="navbar w-[85%] mx-auto">
+      <div data-aos="zoom-in" className="navbar w-[85%] mx-auto">
         <div className="navbar-start">
           <div className="dropdown -ml-8 md:m-0">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
