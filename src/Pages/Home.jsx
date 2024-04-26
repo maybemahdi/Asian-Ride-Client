@@ -209,7 +209,7 @@ const Home = () => {
             <img className="rounded h-[250px] w-full" src={spot.photo} alt="" />
             <div className="mt-6 flex flex-col gap-4">
               <p className="font-semibold text-lg">
-                {spot.location} {spot.country}
+                {spot.spotName} {spot.country}
               </p>
               <p className="font-semibold">
                 Cost:{" "}

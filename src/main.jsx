@@ -11,6 +11,7 @@ import Login from "./Pages/Login.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
 import AddTouristSpot from "./Pages/AddTouristSpot.jsx";
+import ViewDetails from "./Pages/ViewDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-tourist-spot",
-        element: <AddTouristSpot/> ,
+        element: <AddTouristSpot />,
+      },
+      {
+        path: "/spot/:id",
+        element: <ViewDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allspot/${params.id}`),
       },
     ],
   },
@@ -46,6 +53,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <RouterProvider router={router}></RouterProvider>
       </AuthProvider>
     </HelmetProvider>
-    <Toaster/>
+    <Toaster />
   </React.StrictMode>
 );
