@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddTouristSpot = () => {
   const handleAddProduct = (e) => {
     e.preventDefault();
@@ -13,7 +15,7 @@ const AddTouristSpot = () => {
     const visitors = form.visitors.value;
     const email = form.email.value;
     const name = form.userName.value;
-    const user = {
+    const spot = {
       spotName,
       photo,
       country,
@@ -26,7 +28,26 @@ const AddTouristSpot = () => {
       email,
       name,
     };
-    console.log(user);
+    console.log(spot);
+    fetch("http://localhost:5000/allspot", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(spot),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if(data.insertedId){
+          form.reset();
+          Swal.fire({
+            title: "Good job!",
+            text: "You just added a Spot!",
+            icon: "success"
+          });
+        }
+      });
   };
   return (
     <div className="mt-5">
@@ -181,8 +202,6 @@ const AddTouristSpot = () => {
               </label>
               <input
                 className="w-full p-2 border rounded-md"
-                maxLength={5}
-                max={5}
                 min={0}
                 type="number"
                 placeholder="Enter Travel Time"

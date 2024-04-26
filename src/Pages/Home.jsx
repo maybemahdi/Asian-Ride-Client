@@ -1,14 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Loader from "../Components/Loader";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { BiArrowFromLeft } from "react-icons/bi";
+import { Link, useLoaderData } from "react-router-dom";
 AOS.init({
   duration: 1200,
 });
 const Home = () => {
   const { loading } = useContext(AuthContext);
+  const loadedSpots = useLoaderData();
+  const [spots, setSpots] = useState(loadedSpots);
   if (loading) {
     return <Loader />;
   }
@@ -188,6 +191,38 @@ const Home = () => {
             </a>
           </div>
         </div>
+      </div>
+      {/* Loaded 6 spot places  */}
+      <div className="flex flex-col my-12 items-center">
+        <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
+          Spots: Just a look of our Spots
+        </h3>
+        <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
+          Visitors can explore historic wonders like the Taj Mahal in India,
+          delve into the vibrant street markets of Kathmandu in Nepal, or
+          indulge in the spicy culinary delights of Sri Lanka.
+        </p>
+      </div>
+      <div data-aos="fade-up" className="grid grid-cols-3 gap-6">
+        {spots.slice(0, 6).map((spot) => (
+          <div data-aos="zoom-in" key={spot._id} className="p-5 shadow-md rounded-md">
+            <img className="rounded h-[250px] w-full" src={spot.photo} alt="" />
+            <div className="mt-6 flex flex-col gap-4">
+              <p className="font-semibold text-lg">
+                {spot.location} {spot.country}
+              </p>
+              <p className="font-semibold">
+                Cost:{" "}
+                <span className="text-green-600">
+                  ${spot.cost}/{spot.time}day
+                </span>
+              </p>
+              <Link to={`/spot/${spot._id}`}>
+                <button className="bg-[#b9947000] font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#DEAC80]">View Details</button>
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
       {/* testimonial section */}
       <div className="my-10">
