@@ -32,7 +32,6 @@ const AddTouristSpot = () => {
       email,
       name,
     };
-    console.log(spot);
     fetch("http://localhost:5000/allspot", {
       method: "POST",
       headers: {

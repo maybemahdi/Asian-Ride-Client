@@ -11,7 +11,7 @@ const Category = () => {
   //   console.log(country)
   //   console.log(allSpot)
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>Asian Ride | {country.toLowerCase()}</title>
       </Helmet>
@@ -26,7 +26,7 @@ const Category = () => {
           indulge in the spicy culinary delights of Sri Lanka.
         </p>
       </div>
-      <div data-aos="fade-up" className="grid grid-cols-3 my-10 gap-6">
+      <div data-aos="fade-up" className="grid lg:grid-cols-3 my-10 gap-6">
         {filteredSpots.map((spot) => (
           <div
             data-aos="zoom-in"

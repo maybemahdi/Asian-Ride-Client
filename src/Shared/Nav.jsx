@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import "../App.css";
 import { Tooltip } from "react-tooltip";
+import { HiMiniBars3CenterLeft } from "react-icons/hi2";
+import { RxCross2 } from "react-icons/rx";
 
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -10,7 +12,7 @@ const Nav = () => {
   const [openNav, setOpenNav] = useState(false);
   const toggleNav = () => {
     setOpenNav(!openNav);
-    document.getElementById("mainDiv").removeAttribute("data-aos");
+    // document.getElementById("mainDiv").removeAttribute("data-aos");
   };
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -174,8 +176,8 @@ const Nav = () => {
   );
   return (
     <div
-      className={`bg-[#B5C18E] transition-all duration-500 py-5 ${
-        openNav ? "mb-[220px]" : ""
+      className={`bg-[#B5C18E] transition-all z-20 duration-500 py-5 ${
+        openNav ? "mb-[230px]" : ""
       }`}
     >
       <div data-aos="zoom-in" className="navbar w-[85%] mx-auto">
@@ -206,36 +208,12 @@ const Nav = () => {
           </div> */}
           <button
             onClick={toggleNav}
-            className="block md:hidden cursor-pointer -ml-2 mr-3 border border-[#8b9667] bg-[#fff0] p-2 rounded text-gray-600 hover:bg-[#fff0] focus:outline-none"
+            className="block md:hidden cursor-pointer -ml-[18px] mr-3 border border-[#8b966700] bg-[#fff0] p-2 rounded text-gray-600 hover:bg-[#fff0] focus:outline-none"
           >
-            <svg
+            <HiMiniBars3CenterLeft
               className={`w-7 h-7 ${openNav ? "hidden" : "block"}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
-            <svg
-              className={`w-7 h-7 ${openNav ? "block" : "hidden"}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
-            </svg>
+            />
+            <RxCross2 className={`w-7 h-7 ${openNav ? "block" : "hidden"}`} />
           </button>
           <div
             className={`${
@@ -295,7 +273,7 @@ const Nav = () => {
               />
             )}
             {user?.displayName && (
-              <div className="absolute text-center space-y-1 py-2 hidden z-20 w-[150px] top-[45px] -left-12 bg-gray-800 text-white px-2 rounded">
+              <div className="absolute text-center space-y-1 py-2 hidden z-20 w-[150px] top-[45px] -left-20 md:-left-12 bg-gray-800 text-white px-2 rounded">
                 <p
                   data-tooltip-id="my-tooltip2"
                   data-tooltip-content="User Name"

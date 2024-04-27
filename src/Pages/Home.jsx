@@ -31,7 +31,7 @@ const Home = () => {
         <title>Asian Ride | Home</title>
       </Helmet>
       {/* banner slider  */}
-      <div data-aos="zoom-in" className="carousel z-10 w-full my-12">
+      <div data-aos="zoom-in" className="carousel w-full my-12">
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://i.ibb.co/smF6vYb/ashraful-pranto-s-Z90-UEv0-CHw-unsplash.jpg"
@@ -231,7 +231,7 @@ const Home = () => {
           indulge in the spicy culinary delights of Sri Lanka.
         </p>
       </div>
-      <div data-aos="fade-up" className="grid grid-cols-3 gap-6">
+      <div data-aos="fade-up" className="grid lg:grid-cols-3 gap-6">
         {spots.slice(0, 6).map((spot) => (
           <div
             data-aos="zoom-in"
@@ -283,7 +283,7 @@ const Home = () => {
           delights of Sri Lanka.
         </p>
       </div>
-      <div data-aos="fade-up" className="grid grid-cols-3 gap-6">
+      <div data-aos="fade-up" className="grid lg:grid-cols-3 gap-6">
         {countries.map((country) => (
           <div
             data-aos="zoom-in"

@@ -43,7 +43,7 @@ const AllTouristSpot = () => {
           </li>
         </ul>
       </div>
-      <div data-aos="fade-up" className="grid grid-cols-3 gap-6">
+      <div data-aos="fade-up" className="grid lg:grid-cols-3 gap-6">
         {filter.map((spot) => (
           <div
             data-aos="zoom-in"
