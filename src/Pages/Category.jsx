@@ -1,24 +1,24 @@
-import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { IoIosArrowDown } from "react-icons/io";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
-const AllTouristSpot = () => {
-  const loadedSpots = useLoaderData();
-  const [filter, setFilter] = useState(loadedSpots);
-  const handleFilter = (filterText) => {
-    if (filterText === "cost") {
-      setFilter(() => [...filter].sort((a, b) => b.cost - a.cost));
-    }
-  };
+const Category = () => {
+  const allSpot = useLoaderData();
+  const { country } = useParams();
+  const filteredSpots = allSpot.filter(
+    (single) => single.country.toLowerCase() === country.toLowerCase()
+  );
+  console.log(filteredSpots);
+  //   console.log(country)
+  //   console.log(allSpot)
   return (
-    <div className="my-12">
+    <div>
       <Helmet>
-        <title>Asian Ride | All Tourist Spot</title>
+        <title>Asian Ride | {country.toLowerCase()}</title>
       </Helmet>
       <div className="flex flex-col mb-8 items-center">
         <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
-          Spots: Just a look of our Spots
+          Just a look of {" "}
+          <span className="text-[#B99470]">{country.toUpperCase()}</span>
         </h3>
         <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
           Visitors can explore historic wonders like the Taj Mahal in India,
@@ -26,25 +26,8 @@ const AllTouristSpot = () => {
           indulge in the spicy culinary delights of Sri Lanka.
         </p>
       </div>
-      <div className="dropdown w-fit mx-auto flex my-5 items-center justify-center">
-        <div
-          tabIndex={0}
-          role="button"
-          className="px-7 py-2 flex items-center rounded-lg text-white font-bold gap-2 bg-[#B99470]"
-        >
-          Short By <IoIosArrowDown />
-        </div>
-        <ul
-          tabIndex={0}
-          className="dropdown-content p-1 mt-24 z-[1] menu shadow bg-[#e3e3e3] rounded-box"
-        >
-          <li onClick={() => handleFilter("cost")}>
-            <a>Average Cost</a>
-          </li>
-        </ul>
-      </div>
-      <div data-aos="fade-up" className="grid grid-cols-3 gap-6">
-        {filter.map((spot) => (
+      <div data-aos="fade-up" className="grid grid-cols-3 my-10 gap-6">
+        {filteredSpots.map((spot) => (
           <div
             data-aos="zoom-in"
             key={spot._id}
@@ -56,15 +39,24 @@ const AllTouristSpot = () => {
                 Spot Name: {spot.spotName}
               </p>
               <p className="font-semibold text-base">
+                Country: {spot.country}
+              </p>
+              <p className="font-semibold text-base">
+                Location: {spot.location}
+              </p>
+              <p className="font-semibold text-base">
+                Description: {spot.description}
+              </p>
+              <p className="font-semibold text-base">
                 Average Cost:{" "}
                 <span className="text-green-600">${spot.cost}</span>
               </p>
-              <p className="font-semibold text-base">
+              {/* <p className="font-semibold text-lg">
                 Visitors: {spot.visitors}/Year
               </p>
-              <p className="font-semibold text-base">
+              <p className="font-semibold text-lg">
                 Travel Time: {spot.time} days
-              </p>
+              </p> */}
               <p className="font-semibold text-base">Season: {spot.season}</p>
               <Link to={`/spot/${spot._id}`}>
                 <button className="bg-[#b9947000] font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#DEAC80]">
@@ -79,4 +71,4 @@ const AllTouristSpot = () => {
   );
 };
 
-export default AllTouristSpot;
+export default Category;

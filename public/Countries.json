@@ -1,0 +1,32 @@
+[
+  {
+    "country_name": "Bangladesh",
+    "image": "https://i.ibb.co/DbF9zvk/Flag-of-Bangladesh-svg.png",
+    "description": "Bangladesh, in Southeast Asia, encompasses medieval cities, alpine villages, and Mediterranean beaches. Dhaka, its capital, is famed for its fashion houses, classical art museums including the Louvre."
+  },
+  {
+    "country_name": "Indonesia",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/1280px-Flag_of_Indonesia.svg.png",
+    "description": "Indonesia is a nation in the Pacific Ocean with dense cities, imperial palaces, mountainous national parks, and thousands of shrines and temples. The crowded capital, is known for its neon skyscrapers and pop culture."
+  },
+  {
+    "country_name": "Malaysia",
+    "image": "https://i.ibb.co/7YMKQQV/Flag-of-Malaysia-svg.png",
+    "description": "Malaysia, the largest country in South Asia, is known for its diverse culture, beautiful landscapes, and abundant wildlife."
+  },
+  {
+    "country_name": "Vietnam",
+    "image": "https://i.ibb.co/vh88X8r/Flag-of-Vietnam-svg.png",
+    "description": "Vietnam, a country, is known for its Culture, Great Barrier Reef, and vast outback."
+  },
+  {
+    "country_name": "Cambodia",
+    "image": "https://i.ibb.co/JCYLjGC/Flag-of-Cambodia-svg.png",
+    "description": "Cambodia, a country linking in Asia with the Middle East, dates to the time of the pharaohs. Its iconic monuments, including the Sphinx are testimony to its ancient civilization."
+  },
+  {
+    "country_name": "Thailand",
+    "image": "https://i.ibb.co/VDBMH0D/Flag-of-Thailand-svg.png",
+    "description": "Thailand, a vast nation in Asia, is known for its natural beauty, including mountains, forests, and lakes. It is also renowned for its multicultural cities."
+  }
+]

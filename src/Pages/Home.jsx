@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Loader from "../Components/Loader";
 import AOS from "aos";
@@ -13,6 +13,14 @@ const Home = () => {
   const { loading } = useContext(AuthContext);
   const loadedSpots = useLoaderData();
   const [spots, setSpots] = useState(loadedSpots);
+  const [countries, setCountries] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/countries")
+      .then((res) => res.json())
+      .then((data) => {
+        setCountries(data);
+      });
+  }, []);
   if (loading) {
     return <Loader />;
   }
@@ -209,7 +217,11 @@ const Home = () => {
       </div>
       <div data-aos="fade-up" className="grid grid-cols-3 gap-6">
         {spots.slice(0, 6).map((spot) => (
-          <div data-aos="zoom-in" key={spot._id} className="p-5 shadow-md rounded-md">
+          <div
+            data-aos="zoom-in"
+            key={spot._id}
+            className="p-5 shadow-md bg-[#b5c18e39] rounded-md"
+          >
             <img className="rounded h-[250px] w-full" src={spot.photo} alt="" />
             <div className="mt-6 flex flex-col gap-4">
               <p className="font-semibold text-lg">
@@ -222,7 +234,9 @@ const Home = () => {
                 </span>
               </p>
               <Link to={`/spot/${spot._id}`}>
-                <button className="bg-[#b9947000] font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#DEAC80]">View Details</button>
+                <button className="bg-[#b9947000] font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#DEAC80]">
+                  View Details
+                </button>
               </Link>
             </div>
           </div>
@@ -234,10 +248,33 @@ const Home = () => {
           Countries: We offer to visit
         </h3>
         <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
-          Explore historic wonders like the Himalaya in Nepal,
-          delve into the vibrant street markets of Dhaka, or
-          indulge in the spicy culinary delights of Sri Lanka.
+          Explore historic wonders like the Himalaya in Nepal, delve into the
+          vibrant street markets of Dhaka, or indulge in the spicy culinary
+          delights of Sri Lanka.
         </p>
+      </div>
+      <div data-aos="fade-up" className="grid grid-cols-3 gap-6">
+        {countries.map((country) => (
+          <div
+            data-aos="zoom-in"
+            key={country._id}
+            className="p-5 shadow-md bg-[#b5c18e39] rounded-md"
+          >
+            <Link to={`/country/${(country.country_name).toLowerCase()}`}>
+              <img
+                className="rounded h-[250px] shadow w-full"
+                src={country.image}
+                alt=""
+              />
+              <div className="flex flex-col gap-3 mt-8">
+                <h3 className="text-xl font-bold">{country.country_name}</h3>
+                <p className="text-base font-normal text-[#636262]">
+                  {country.description}
+                </p>
+              </div>
+            </Link>
+          </div>
+        ))}
       </div>
       {/* testimonial section */}
       <div className="my-10">

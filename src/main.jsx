@@ -16,6 +16,7 @@ import AllTouristSpot from "./Pages/AllTouristSpot.jsx";
 import MyList from "./Pages/MyList.jsx";
 import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 import UpdateSpot from "./Pages/UpdateSpot.jsx";
+import Category from "./Pages/Category.jsx";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,11 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/allspot/${params.id}`),
       },
+      {
+        path: "/country/:country",
+        element: <Category/>,
+        loader: () => fetch("http://localhost:5000/allspot"),
+      }
     ],
   },
 ]);
