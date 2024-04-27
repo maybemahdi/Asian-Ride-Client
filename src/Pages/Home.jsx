@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import { BiArrowFromLeft } from "react-icons/bi";
 import { Link, useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { Typewriter } from "react-simple-typewriter";
 AOS.init({
   duration: 1200,
 });
@@ -207,7 +208,22 @@ const Home = () => {
       {/* Loaded 6 spot places  */}
       <div className="flex flex-col my-12 items-center">
         <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
-          Spots: Just a look of our Spots
+          <Typewriter
+            cursor
+            cursorBlinking
+            cursorColor="#000000"
+            cursorStyle={null}
+            delaySpeed={1000}
+            deleteSpeed={25}
+            loop={0}
+            typeSpeed={75}
+            words={[
+              "Spots: Just a look of our Spots",
+              "Welcome to Asian Ride",
+              "Find Your Favorite Spot",
+              "Choose Your Destination Quickly 😵",
+            ]}
+          />
         </h3>
         <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
           Visitors can explore historic wonders like the Taj Mahal in India,
@@ -245,7 +261,21 @@ const Home = () => {
       {/* countries section  */}
       <div className="flex flex-col my-12 items-center">
         <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
-          Countries: We offer to visit
+          <Typewriter
+            cursor
+            cursorBlinking
+            cursorColor="#000000"
+            cursorStyle={null}
+            delaySpeed={1000}
+            deleteSpeed={25}
+            loop={0}
+            typeSpeed={75}
+            words={[
+              "Countries: We offer to Visit",
+              "Select Your Country",
+              "Fall in Love with our Tour 😍",
+            ]}
+          />
         </h3>
         <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
           Explore historic wonders like the Himalaya in Nepal, delve into the
@@ -260,7 +290,7 @@ const Home = () => {
             key={country._id}
             className="p-5 shadow-md bg-[#b5c18e39] rounded-md"
           >
-            <Link to={`/country/${(country.country_name).toLowerCase()}`}>
+            <Link to={`/country/${country.country_name.toLowerCase()}`}>
               <img
                 className="rounded h-[250px] shadow w-full"
                 src={country.image}
@@ -283,7 +313,20 @@ const Home = () => {
             data-aos="zoom-in"
             className="text-3xl text-center mt-10 font-bold"
           >
-            Testimonials: What visitors Are Saying
+            <Typewriter
+              cursor
+              cursorBlinking
+              cursorColor="#000000"
+              cursorStyle={null}
+              delaySpeed={1000}
+              deleteSpeed={25}
+              loop={0}
+              typeSpeed={75}
+              words={[
+                "Testimonials: What visitors Are Saying",
+                "Reviews: What our Clients Are Saying",
+              ]}
+            />
           </h3>
           <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
             Explore firsthand experiences from tenants who have utilized our
@@ -466,7 +509,20 @@ const Home = () => {
       {/* our gallery section */}
       <div className="flex flex-col my-12 items-center">
         <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
-          Gallery: Just a look of our Gallery
+          <Typewriter
+            cursor
+            cursorBlinking
+            cursorColor="#000000"
+            cursorStyle={null}
+            delaySpeed={1000}
+            deleteSpeed={25}
+            loop={0}
+            typeSpeed={75}
+            words={[
+              "Gallery: Just a look of our Gallery",
+              "Look: How Beautiful Images these are! 😍",
+            ]}
+          />
         </h3>
         <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
           Visitors can explore historic wonders like the Taj Mahal in India,
