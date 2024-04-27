@@ -32,7 +32,7 @@ const AddTouristSpot = () => {
       email,
       name,
     };
-    fetch("http://localhost:5000/allspot", {
+    fetch("https://assignment-10-server-kappa-wheat.vercel.app/allspot", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

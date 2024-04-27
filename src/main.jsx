@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/allspot"),
+        loader: () => fetch("https://assignment-10-server-kappa-wheat.vercel.app/allspot"),
       },
       {
         path: "/register",
@@ -53,12 +53,12 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allspot/${params.id}`),
+          fetch(`https://assignment-10-server-kappa-wheat.vercel.app/allspot/${params.id}`),
       },
       {
         path: "/all-tourist-spot",
         element: <AllTouristSpot />,
-        loader: () => fetch("http://localhost:5000/allspot"),
+        loader: () => fetch("https://assignment-10-server-kappa-wheat.vercel.app/allspot"),
       },
       {
         path: "my-list",
@@ -76,12 +76,12 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allspot/${params.id}`),
+          fetch(`https://assignment-10-server-kappa-wheat.vercel.app/allspot/${params.id}`),
       },
       {
         path: "/country/:country",
         element: <Category/>,
-        loader: () => fetch("http://localhost:5000/allspot"),
+        loader: () => fetch("https://assignment-10-server-kappa-wheat.vercel.app/allspot"),
       }
     ],
   },

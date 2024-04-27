@@ -15,3 +15,11 @@
 * Integration JSON for information
 * Responsive design for seamless user experience across devices
 * Unit tests for ensuring code reliability
+
+## NPM Packages:
+* React TypeWriter
+* React Tooltip
+* React Icons
+* React Spinners
+* React Hot Toast
+* Sweet Alert and many more

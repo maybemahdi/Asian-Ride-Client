@@ -15,7 +15,7 @@ const MyList = () => {
   const { isLoading, refetch } = UseRefetch();
   const email = user.email;
   useEffect(() => {
-    fetch("http://localhost:5000/allspot")
+    fetch("https://assignment-10-server-kappa-wheat.vercel.app/allspot")
       .then((res) => res.json())
       .then((data) => {
         setMySpots(data.filter((singleData) => singleData.email === email));
@@ -32,7 +32,7 @@ const MyList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allspot/${id}`, {
+        fetch(`https://assignment-10-server-kappa-wheat.vercel.app/allspot/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

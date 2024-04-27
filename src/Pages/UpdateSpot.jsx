@@ -33,7 +33,7 @@ const UpdateSpot = () => {
       time,
       visitors,
     };
-    fetch(`http://localhost:5000/allspot/${id}`, {
+    fetch(`https://assignment-10-server-kappa-wheat.vercel.app/allspot/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
