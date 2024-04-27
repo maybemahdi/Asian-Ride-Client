@@ -40,7 +40,7 @@ const Home = () => {
           <div className="absolute rounded-lg inset-0 bg-black opacity-50"></div>
           <div
             data-aos="zoom-in"
-            className="flex absolute flex-col space-y-6 justify-center my-40 items-center text-white"
+            className="flex absolute flex-col space-y-6 justify-center my-28 md:my-40 items-center text-white"
           >
             <h3 className="lg:text-6xl text-4xl text-center font-black text-[#9dad68]">
               Welcome to Cox's Bazar

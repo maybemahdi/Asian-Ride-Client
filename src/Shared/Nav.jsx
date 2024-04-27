@@ -7,6 +7,11 @@ import { Tooltip } from "react-tooltip";
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
   const [theme, setTheme] = useState("light");
+  const [openNav, setOpenNav] = useState(false);
+  const toggleNav = () => {
+    setOpenNav(!openNav);
+    document.getElementById("mainDiv").removeAttribute("data-aos");
+  };
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
@@ -79,12 +84,104 @@ const Nav = () => {
       </li>
     </>
   );
+  const navLinksB = (
+    <>
+      <li>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+              : "text-black no-underline"
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+              : "text-black no-underline"
+          }
+          to={"/all-tourist-spot"}
+        >
+          All Tourists Spot
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+              : "text-black no-underline"
+          }
+          to={"/add-tourist-spot"}
+        >
+          Add Tourists Spot
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+              : "text-black no-underline"
+          }
+          to={"/my-list"}
+        >
+          My List
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+              : "text-black no-underline"
+          }
+          to={"/login"}
+        >
+          Login
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+              : "text-black no-underline"
+          }
+          to={"/register"}
+        >
+          Register
+        </NavLink>
+      </li>
+    </>
+  );
   return (
-    <div className="bg-[#B5C18E] py-5">
+    <div
+      className={`bg-[#B5C18E] transition-all duration-500 py-5 ${
+        openNav ? "mb-[220px]" : ""
+      }`}
+    >
       <div data-aos="zoom-in" className="navbar w-[85%] mx-auto">
         <div className="navbar-start">
-          <div className="dropdown -ml-8 md:m-0">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          {/* <div className="dropdown -ml-[30px] md:m-0">
+            <div tabIndex={0} role="button" className="btn z-20 btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -106,6 +203,46 @@ const Nav = () => {
             >
               {navLinks}
             </ul>
+          </div> */}
+          <button
+            onClick={toggleNav}
+            className="block md:hidden cursor-pointer -ml-2 mr-3 border border-[#8b9667] bg-[#fff0] p-2 rounded text-gray-600 hover:bg-[#fff0] focus:outline-none"
+          >
+            <svg
+              className={`w-7 h-7 ${openNav ? "hidden" : "block"}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+            <svg
+              className={`w-7 h-7 ${openNav ? "block" : "hidden"}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+          <div
+            className={`${
+              openNav ? "" : "hidden"
+            } my-4 bg-[#B5C18E] w-full absolute left-0 top-20 flex flex-col gap-4 p-2 rounded-md`}
+          >
+            <ul className="menu">{navLinksB}</ul>
           </div>
           <Link className="md:text-2xl text-xl w-fit font-bold">
             Asian Ride
@@ -116,7 +253,7 @@ const Nav = () => {
             {navLinks}
           </ul>
         </div>
-        <div className="navbar-end relative md:gap-4">
+        <div className="navbar-end relative gap-4">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input
