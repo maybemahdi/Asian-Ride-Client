@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import "../App.css";
+import { Tooltip } from "react-tooltip";
 
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -124,9 +125,11 @@ const Nav = () => {
               className="theme-controller"
               value="synthwave"
             />
-
+            <Tooltip id="my-tooltip3" />
             {/* sun icon */}
             <svg
+              data-tooltip-id="my-tooltip3"
+              data-tooltip-content="Switch Theme"
               className="swap-off fill-current w-10 h-10"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -136,6 +139,8 @@ const Nav = () => {
 
             {/* moon icon */}
             <svg
+              data-tooltip-id="my-tooltip3"
+              data-tooltip-content="Switch Theme"
               className="swap-on fill-current w-10 h-10"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -153,26 +158,39 @@ const Nav = () => {
               />
             )}
             {user?.displayName && (
-              <div className="absolute text-center space-y-1 py-2 hidden z-10 w-[150px] top-[45px] -left-12 bg-gray-800 text-white px-2 rounded">
-                <p>{user?.displayName}</p>
+              <div className="absolute text-center space-y-1 py-2 hidden z-20 w-[150px] top-[45px] -left-12 bg-gray-800 text-white px-2 rounded">
+                <p
+                  data-tooltip-id="my-tooltip2"
+                  data-tooltip-content="User Name"
+                >
+                  {user?.displayName}
+                </p>
                 <button
+                  data-tooltip-id="my-tooltip2"
+                  data-tooltip-content="LogOut from Your Account"
                   onClick={() => logOut()}
-                  className="p-2 transition-all duration-500 hover:bg-gray-600 bg-gray-700"
+                  className="px-5 py-2 transition-all rounded duration-500 hover:bg-gray-600 bg-gray-700"
                 >
                   Log Out
                 </button>
+                <Tooltip id="my-tooltip2" place="left" />
               </div>
             )}
           </div>
           {!user && (
             <div className="md:flex hidden gap-4">
               <Link
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content="Login to Your Account"
                 to={"/login"}
                 className="bg-[#b9947000] font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#8b9568]"
               >
                 Login
               </Link>
+              <Tooltip id="my-tooltip" />
               <Link
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content="Register New Account"
                 to={"/register"}
                 className="bg-[#b9947000] font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#8b9568]"
               >

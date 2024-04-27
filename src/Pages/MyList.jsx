@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import UseRefetch from "../Refetch/UseRefetch";
 import Loader from "../Components/Loader";
 import { Helmet } from "react-helmet-async";
+import { Tooltip } from "react-tooltip";
 
 const MyList = () => {
   const { user } = useContext(AuthContext);
@@ -89,12 +90,18 @@ const MyList = () => {
                 <td>${spot.cost}</td>
                 <td className="flex gap-4">
                   <Link to={`/update-spot/${spot._id}`}>
-                    <button title="Update Spot" className="btn">
+                    <button
+                      data-tooltip-id="my-tooltip"
+                      data-tooltip-content="Update Your Spot"
+                      className="btn"
+                    >
                       <FiEdit2 className="text-[#B99470]" />
                     </button>
+                    <Tooltip id="my-tooltip" />
                   </Link>
                   <button
-                    title="Delete Spot"
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content="Delete Your Spot"
                     onClick={() => handleDelete(spot._id)}
                     className="btn"
                   >

@@ -31,7 +31,7 @@ const Home = () => {
         <title>Asian Ride | Home</title>
       </Helmet>
       {/* banner slider  */}
-      <div data-aos="zoom-in" className="carousel w-full my-12">
+      <div data-aos="zoom-in" className="carousel z-10 w-full my-12">
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://i.ibb.co/smF6vYb/ashraful-pranto-s-Z90-UEv0-CHw-unsplash.jpg"
