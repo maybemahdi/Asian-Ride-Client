@@ -285,12 +285,14 @@ const Home = () => {
       </div>
       <div data-aos="fade-up" className="grid lg:grid-cols-3 gap-6">
         {countries.map((country) => (
-          <div
-            data-aos="zoom-in"
+          <Link
             key={country._id}
-            className="p-5 shadow-md bg-[#b5c18e39] rounded-md"
+            to={`/country/${country.country_name.toLowerCase()}`}
           >
-            <Link to={`/country/${country.country_name.toLowerCase()}`}>
+            <div
+              data-aos="zoom-in"
+              className="p-5 lg:h-[482px] shadow-md bg-[#b5c18e39] rounded-md"
+            >
               <img
                 className="rounded h-[250px] shadow w-full"
                 src={country.image}
@@ -302,8 +304,8 @@ const Home = () => {
                   {country.description}
                 </p>
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
       {/* testimonial section */}
