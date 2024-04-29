@@ -62,11 +62,11 @@ const MyList = () => {
       </Helmet>
       <div className="flex flex-col mb-10 items-center">
         <h3 data-aos="zoom-in" className="text-3xl text-center mt-10 font-bold">
-          Add Spot Here
+          Spots You Added
         </h3>
         <p data-aos="zoom-out-right" className="text-center my-5 md:w-[80%]">
-          You Can add Asian tourist spot from here and can access the added spot
-          by you from my list option, make sure that you are logged in to view
+          You Can See Asian tourist spot from here and can access the added spot
+          by you from this list option, make sure that you are logged in to view
         </p>
       </div>
       <div className="overflow-x-auto">
